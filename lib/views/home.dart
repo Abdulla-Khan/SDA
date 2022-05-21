@@ -19,7 +19,7 @@ class HomeView extends StatelessWidget {
             ClipPath(
               clipper: SignUpClipper(),
               child: Image(
-                height: s.height / 1.8,
+                height: s.height / 2,
                 width: double.infinity,
                 image: AssetImage('assets/sign.jpg'),
                 fit: BoxFit.cover,
@@ -77,6 +77,7 @@ class HomeView extends StatelessWidget {
                       ),
                     ),
                   ),
+                  SizedBox(height: 10),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
