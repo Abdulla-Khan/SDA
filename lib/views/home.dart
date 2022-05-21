@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:social/views/widgets/signup_clipper.dart';
 
+import 'profile.dart';
 import 'widgets/sign_up_feild.dart';
 
 class HomeView extends StatelessWidget {
@@ -54,21 +55,25 @@ class HomeView extends StatelessWidget {
                     children: [Text('Forgot Password?')],
                   ),
                   SizedBox(height: 20),
-                  Container(
-                    height: s.height * 0.065,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Colors.yellow,
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Login',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.w600,
-                            fontSize: 20,
-                            letterSpacing: .5),
+                  InkWell(
+                    onTap: () => Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (_) => ProfileView())),
+                    child: Container(
+                      height: s.height * 0.065,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Colors.yellow,
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Login',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 20,
+                              letterSpacing: .5),
+                        ),
                       ),
                     ),
                   ),
