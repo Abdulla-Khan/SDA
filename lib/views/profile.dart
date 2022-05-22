@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -7,7 +7,7 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size s = MediaQuery.of(context).size;
-
+    // TabController controller = TabController();
     return Scaffold(
         body: Padding(
       padding: const EdgeInsets.only(top: 40, left: 18, right: 18),
@@ -137,9 +137,63 @@ class ProfileView extends StatelessWidget {
                 style: TextStyle(fontSize: 18),
               ),
             ],
-          )
+          ),
+          Divider(
+            color: Color.fromARGB(255, 151, 149, 149),
+            height: 50,
+            thickness: 2,
+          ),
+          DefaultTabController(
+              length: 3,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  ext(
+                    name: 'Portfolio',
+                  ),
+                  SizedBox(width: 10),
+                  ext(name: 'LifeStyle'),
+                  SizedBox(width: 10),
+                  ext(name: 'Collaboration'),
+                ],
+              ))
         ],
       ),
     ));
+  }
+}
+
+class ext extends StatefulWidget {
+  ext({
+    required this.name,
+    Key? key,
+  }) : super(key: key);
+  String name;
+  @override
+  State<ext> createState() => _TextState();
+}
+
+class _TextState extends State<ext> {
+  bool selected = true;
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        setState(() {
+          selected = !selected;
+        });
+      },
+      child: Text(
+        widget.name,
+        style: selected
+            ? TextStyle(
+                fontWeight: FontWeight.w800, fontSize: 18, color: Colors.white)
+            : TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 20,
+                color: Color.fromARGB(255, 151, 149, 149),
+              ),
+      ),
+    );
   }
 }
