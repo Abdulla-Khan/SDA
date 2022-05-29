@@ -28,7 +28,10 @@ class HomeView extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20.0, top: 5, right: 20),
+              padding: EdgeInsets.only(
+                  left: s.width * 0.05,
+                  top: s.height * 0.02,
+                  right: s.width * 0.05),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -39,7 +42,7 @@ class HomeView extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
-                  SizedBox(height: 5),
+                  SizedBox(height: s.height * 0.01),
                   Text(
                     'Welcome Back. You\'ve been missed!',
                     style: TextStyle(
@@ -47,16 +50,16 @@ class HomeView extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: s.height * 0.01),
                   SignUp_Feild(),
-                  SizedBox(height: 20),
+                  SizedBox(height: s.height * 0.02),
                   SignUp_Feild(),
-                  SizedBox(height: 10),
+                  SizedBox(height: s.height * 0.01),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [Text('Forgot Password?')],
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: s.height * 0.03),
                   InkWell(
                     onTap: () => Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (_) => ProfileView())),
@@ -79,7 +82,7 @@ class HomeView extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
+                  SizedBox(height: s.height * 0.01),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -89,7 +92,7 @@ class HomeView extends StatelessWidget {
                         style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.w600,
-                            fontSize: 16),
+                            fontSize: 14),
                       ),
                       TextButton(
                           onPressed: () {},
