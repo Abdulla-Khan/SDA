@@ -1,13 +1,14 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:social/views/home_view.dart';
 import 'package:social/views/widgets/signup_clipper.dart';
 
-import 'profile.dart';
+import 'profile_view.dart';
 import 'widgets/sign_up_feild.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+class LoginView extends StatelessWidget {
+  const LoginView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -61,8 +62,8 @@ class HomeView extends StatelessWidget {
                   ),
                   SizedBox(height: s.height * 0.03),
                   InkWell(
-                    onTap: () => Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (_) => ProfileView())),
+                    onTap: () => Navigator.pushReplacement(
+                        context, MaterialPageRoute(builder: (_) => HomeView())),
                     child: Container(
                       height: s.height * 0.065,
                       width: double.infinity,
