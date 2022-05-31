@@ -113,62 +113,62 @@ class HireCard extends StatelessWidget {
         shrinkWrap: true,
         itemCount: list.length,
         itemBuilder: (context, index) {
-          return InkWell(
-            onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (_) => ProfileView(
-                          i: index,
-                        ))),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: s.width * 0.01),
-                      height: s.height / 4,
-                      width: s.width / 6,
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 72, 72, 72),
-                          borderRadius: BorderRadius.circular(24)),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Spacer(),
-                          Text(
-                            '\$${list[index].hour}',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 18),
-                          ),
-                          Text(
-                            'Hour',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500, fontSize: 18),
-                          ),
-                          Spacer(),
-                          Divider(
-                            color: Color.fromARGB(255, 151, 149, 149),
-                            height: 10,
-                            thickness: 1,
-                          ),
-                          Spacer(),
-                          Text(
-                            '\$${list[index].wek}',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 18),
-                          ),
-                          Text(
-                            'Week',
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500, fontSize: 18),
-                          ),
-                          Spacer(),
-                        ],
-                      ),
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: s.width * 0.01),
+                    height: s.height / 4,
+                    width: s.width / 6,
+                    decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 72, 72, 72),
+                        borderRadius: BorderRadius.circular(24)),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Spacer(),
+                        Text(
+                          '\$${list[index].hour}',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        ),
+                        Text(
+                          'Hour',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 18),
+                        ),
+                        Spacer(),
+                        Divider(
+                          color: Color.fromARGB(255, 151, 149, 149),
+                          height: 10,
+                          thickness: 1,
+                        ),
+                        Spacer(),
+                        Text(
+                          '\$${list[index].wek}',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        ),
+                        Text(
+                          'Week',
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 18),
+                        ),
+                        Spacer(),
+                      ],
                     ),
-                    Container(
+                  ),
+                  InkWell(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (_) => ProfileView(
+                                  i: index,
+                                ))),
+                    child: Container(
                       height: s.height / 4,
                       width: s.width / 1.4,
                       decoration: BoxDecoration(
@@ -217,37 +217,34 @@ class HireCard extends StatelessWidget {
                         ],
                       ),
                     ),
-                  ],
-                ),
-                SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      list[index].name,
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
-                    ),
-                    Text(
-                      list[0].state,
-                      style:
-                          TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
-                    ),
-                  ],
-                ),
-                SizedBox(height: s.height * 0.01),
-                Padding(
-                  padding: EdgeInsets.only(right: s.width / 9.1),
-                  child:
-                      ModelButton(s: s, btn1: 'Portfolio', btn2: 'Hire Model'),
-                ),
-                Divider(
-                  color: Color.fromARGB(255, 131, 128, 128),
-                  height: 50,
-                  thickness: 1,
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    list[index].name,
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                  ),
+                  Text(
+                    list[0].state,
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20),
+                  ),
+                ],
+              ),
+              SizedBox(height: s.height * 0.01),
+              Padding(
+                padding: EdgeInsets.only(right: s.width / 9.1),
+                child: ModelButton(s: s, btn1: 'Portfolio', btn2: 'Hire Model'),
+              ),
+              Divider(
+                color: Color.fromARGB(255, 131, 128, 128),
+                height: 50,
+                thickness: 1,
+              ),
+            ],
           );
         });
   }
