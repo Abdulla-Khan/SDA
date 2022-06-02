@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:social/views/constants/color_constants.dart';
 
 class CurvePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint();
 
-    paint.color = Colors.yellow;
+    paint.color = yellow;
     paint.style = PaintingStyle.stroke;
     paint.strokeWidth = 1;
 

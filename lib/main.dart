@@ -5,7 +5,7 @@ import 'package:social/views/splash_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
+  // await FlutterWindowManager.addFlags(FlutterWindowManager.FLAG_SECURE);
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(const MyApp());
@@ -23,6 +23,6 @@ class MyApp extends StatelessWidget {
         color: const Color.fromARGB(255, 36, 36, 36),
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark(),
-        home: SplashView());
+        home: const SplashView());
   }
 }

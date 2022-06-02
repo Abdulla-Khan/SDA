@@ -1,11 +1,9 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
+import 'package:social/views/constants/color_constants.dart';
 import 'package:social/views/home_view.dart';
-import 'package:social/views/widgets/signup_clipper.dart';
+import 'package:social/views/widgets/clippers/signup_clipper.dart';
 
-import 'profile_view.dart';
-import 'widgets/sign_up_feild.dart';
+import 'widgets/sign_in_widgets/sign_up_feild.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -14,7 +12,7 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     Size s = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 37, 37, 37),
+      backgroundColor: black,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +22,7 @@ class LoginView extends StatelessWidget {
               child: Image(
                 height: s.height / 2,
                 width: double.infinity,
-                image: AssetImage('assets/sign.jpg'),
+                image: const AssetImage('assets/sign.jpg'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -36,7 +34,7 @@ class LoginView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Let\'s sign you in',
                     style: TextStyle(
                         fontSize: 24,
@@ -44,7 +42,7 @@ class LoginView extends StatelessWidget {
                         color: Colors.white),
                   ),
                   SizedBox(height: s.height * 0.01),
-                  Text(
+                  const Text(
                     'Welcome Back. You\'ve been missed!',
                     style: TextStyle(
                         fontSize: 14,
@@ -52,26 +50,26 @@ class LoginView extends StatelessWidget {
                         color: Colors.white),
                   ),
                   SizedBox(height: s.height * 0.01),
-                  SignUp_Feild(),
+                  const SignUp_Feild(),
                   SizedBox(height: s.height * 0.02),
-                  SignUp_Feild(),
+                  const SignUp_Feild(),
                   SizedBox(height: s.height * 0.01),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
-                    children: [Text('Forgot Password?')],
+                    children: const [Text('Forgot Password?')],
                   ),
                   SizedBox(height: s.height * 0.03),
                   InkWell(
-                    onTap: () => Navigator.pushReplacement(
-                        context, MaterialPageRoute(builder: (_) => HomeView())),
+                    onTap: () => Navigator.pushReplacement(context,
+                        MaterialPageRoute(builder: (_) => const HomeView())),
                     child: Container(
                       height: s.height * 0.065,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Colors.yellow,
+                        color: yellow,
                         borderRadius: BorderRadius.circular(50),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           'Login',
                           style: TextStyle(
@@ -88,7 +86,7 @@ class LoginView extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Text(
+                      const Text(
                         'Don\'t have an account yet?',
                         style: TextStyle(
                             color: Colors.white,
@@ -97,7 +95,7 @@ class LoginView extends StatelessWidget {
                       ),
                       TextButton(
                           onPressed: () {},
-                          child: Text(
+                          child: const Text(
                             'Sign Up',
                             style: TextStyle(
                                 fontSize: 16,
