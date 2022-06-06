@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 import '../../constants/color_constants.dart';
@@ -88,17 +90,7 @@ class HireCard extends StatelessWidget {
                               fit: BoxFit.cover)),
                       child: Stack(
                         children: [
-                          Container(
-                            height: s.height * 0.09,
-                            width: s.width / 11,
-                            margin: const EdgeInsets.only(left: 10),
-                            decoration: const BoxDecoration(
-                                color: Colors.white, shape: BoxShape.circle),
-                            child: Icon(
-                              Icons.favorite,
-                              color: red,
-                            ),
-                          ),
+                          Fav_Button(s: s),
                           Positioned(
                             right: 0,
                             bottom: 0,
@@ -157,5 +149,43 @@ class HireCard extends StatelessWidget {
             ],
           );
         });
+  }
+}
+
+class Fav_Button extends StatefulWidget {
+  const Fav_Button({
+    Key? key,
+    required this.s,
+  }) : super(key: key);
+
+  final Size s;
+
+  @override
+  State<Fav_Button> createState() => _Fav_ButtonState();
+}
+
+class _Fav_ButtonState extends State<Fav_Button> {
+  bool selected = false;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: widget.s.height * 0.09,
+      width: widget.s.width / 11,
+      margin: const EdgeInsets.only(left: 10),
+      decoration:
+          const BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+      child: InkWell(
+        onTap: () {
+          setState(() {
+            selected = !selected;
+            print(selected);
+          });
+        },
+        child: Icon(
+          Icons.favorite,
+          color: selected ? Color.fromARGB(255, 255, 17, 0) : red,
+        ),
+      ),
+    );
   }
 }

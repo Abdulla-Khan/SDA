@@ -13,6 +13,7 @@ class Home_Tab extends StatelessWidget {
     return DefaultTabController(
       length: 5,
       child: TabBar(
+        physics: BouncingScrollPhysics(),
         isScrollable: true,
         labelColor: Colors.white,
         unselectedLabelColor: Colors.grey,

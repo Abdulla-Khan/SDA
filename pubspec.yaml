@@ -38,6 +38,7 @@ dependencies:
   container_tab_indicator: ^0.3.0
 
   flutter_windowmanager: ^0.2.0
+  http: ^0.13.4
 
 dev_dependencies:
   flutter_test:

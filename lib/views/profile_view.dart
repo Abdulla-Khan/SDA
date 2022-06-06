@@ -15,85 +15,86 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size s = MediaQuery.of(context).size;
-    return Scaffold(
-        backgroundColor: black,
-        body: SingleChildScrollView(
-            child: Padding(
-                padding: EdgeInsets.only(
-                    top: s.height * 0.04,
-                    left: s.width * 0.05,
-                    right: s.width * 0.05),
-                child: Column(children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        height: s.height * 0.04,
-                        width: s.width * 0.15,
-                        decoration: BoxDecoration(
-                            color: grey,
-                            borderRadius: BorderRadius.circular(30)),
-                        child: IconButton(
-                            onPressed: () => Navigator.pop(context),
-                            icon: const Icon(
-                              Icons.arrow_back_ios_new,
-                              size: 18,
-                            )),
-                      ),
-                      const Icon(Icons.more_vert_outlined),
-                    ],
-                  ),
-                  SizedBox(height: s.height * 0.03),
-                  CircleAvatar(
-                    backgroundColor: Colors.white,
-                    radius: 70.0,
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage(list[i].profileurl),
-                      radius: 65.0,
+    return SafeArea(
+      child: Scaffold(
+          backgroundColor: black,
+          body: SingleChildScrollView(
+              physics: BouncingScrollPhysics(),
+              child: Padding(
+                  padding: EdgeInsets.only(
+                      left: s.width * 0.05, right: s.width * 0.05),
+                  child: Column(children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          height: s.height * 0.04,
+                          width: s.width * 0.15,
+                          decoration: BoxDecoration(
+                              color: grey,
+                              borderRadius: BorderRadius.circular(30)),
+                          child: IconButton(
+                              onPressed: () => Navigator.pop(context),
+                              icon: const Icon(
+                                Icons.arrow_back_ios_new,
+                                size: 18,
+                              )),
+                        ),
+                        const Icon(Icons.more_vert_outlined),
+                      ],
                     ),
-                  ),
-                  SizedBox(height: s.height * 0.01),
-                  Text(
-                    list[i].name,
-                    style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 28),
-                  ),
-                  SizedBox(height: s.height * 0.005),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Icon(
-                        Icons.location_pin,
-                        size: 16,
-                        color: Color.fromARGB(255, 151, 149, 149),
+                    SizedBox(height: s.height * 0.03),
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      radius: 70.0,
+                      child: CircleAvatar(
+                        backgroundImage: AssetImage(list[i].profileurl),
+                        radius: 65.0,
                       ),
-                      Text(
-                        '${list[i].state}, US',
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w400,
+                    ),
+                    SizedBox(height: s.height * 0.01),
+                    Text(
+                      list[i].name,
+                      style: const TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 28),
+                    ),
+                    SizedBox(height: s.height * 0.005),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          Icons.location_pin,
+                          size: 16,
                           color: Color.fromARGB(255, 151, 149, 149),
                         ),
-                      )
-                    ],
-                  ),
-                  SizedBox(height: s.height * 0.022),
-                  ModelButton(
-                    s: s,
-                    btn1: 'Hire Model',
-                    btn2: 'Message',
-                  ),
-                  SizedBox(height: s.height * .02),
-                  Model_Info(list: list, i: i, s: s),
-                  const Divider(
-                    color: Color.fromARGB(255, 151, 149, 149),
-                    height: 10,
-                    thickness: 2,
-                  ),
-                  const Profile_Tabs(),
-                  Image_View(s: s, list: list, i: i)
-                ]))));
+                        Text(
+                          '${list[i].state}, ${list[i].country} ',
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w400,
+                            color: Color.fromARGB(255, 151, 149, 149),
+                          ),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: s.height * 0.022),
+                    ModelButton(
+                      s: s,
+                      btn1: 'Hire Model',
+                      btn2: 'Message',
+                    ),
+                    SizedBox(height: s.height * .02),
+                    Model_Info(list: list, i: i, s: s),
+                    const Divider(
+                      color: Color.fromARGB(255, 151, 149, 149),
+                      height: 10,
+                      thickness: 2,
+                    ),
+                    const Profile_Tabs(),
+                    Image_View(s: s, list: list, i: i)
+                  ])))),
+    );
   }
 }

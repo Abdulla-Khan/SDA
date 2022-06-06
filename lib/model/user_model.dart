@@ -1,5 +1,5 @@
 class UserModel {
-  String name, state, profileurl;
+  String name, state, profileurl, country;
   double collab, photos, hour, wek;
   List img;
 
@@ -11,10 +11,12 @@ class UserModel {
       required this.state,
       required this.hour,
       required this.wek,
+      required this.country,
       required this.profileurl});
 
   static List user = [
     UserModel(
+        country: 'Pakistan',
         name: 'Alishba',
         state: 'Karachi',
         profileurl: 'assets/profile1.jpeg',
@@ -28,6 +30,7 @@ class UserModel {
           'assets/model1(c).jpg'
         ]),
     UserModel(
+        country: 'Pakistan',
         name: 'Saifullah',
         state: 'Lahore',
         profileurl: 'assets/profile2.jpg',
@@ -41,6 +44,7 @@ class UserModel {
           'assets/model2(c).jpg'
         ]),
     UserModel(
+        country: 'Pakistan',
         name: 'Tena Durrani',
         state: 'Texas',
         profileurl: 'assets/profile3.jpg',

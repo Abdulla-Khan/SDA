@@ -38,27 +38,27 @@ class SplashView extends StatelessWidget {
                         height: s.height / 20,
                         child: Stack(children: [
                           Positioned(
-                            top: 19,
-                            left: 20,
+                            top: s.height / 35,
+                            left: s.width / 20,
                             child: CircleAvatar(
                               backgroundColor: yellow,
-                              radius: 9,
+                              radius: s.height / 95,
                             ),
                           ),
                           Positioned(
-                            top: 13,
-                            left: 60,
+                            top: s.height / 55,
+                            left: s.width / 6.5,
                             child: CircleAvatar(
                               backgroundColor: yellow,
-                              radius: 8,
+                              radius: s.height / 105,
                             ),
                           ),
                           Positioned(
-                            top: 9.3,
-                            left: 100,
+                            top: s.height / 75,
+                            left: s.width / 4,
                             child: CircleAvatar(
                               backgroundColor: yellow,
-                              radius: 6,
+                              radius: s.height / 115,
                             ),
                           ),
                         ]),
