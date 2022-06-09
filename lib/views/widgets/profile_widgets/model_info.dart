@@ -19,7 +19,7 @@ class Model_Info extends StatelessWidget {
       children: [
         const Icon(Icons.people),
         Text(
-          ' ${list[i].collab} ',
+          ' ${list[i].collaborations} ',
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         const Text(

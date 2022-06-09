@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:social/model/api_model.dart';
 import 'package:social/views/constants/color_constants.dart';
+import '../api_service/service.dart';
 import '../model/user_model.dart';
 import 'widgets/home_widgets/home_card.dart';
 import 'widgets/home_widgets/home_tabs.dart';
@@ -12,6 +14,12 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
+  submitForm() async {
+    ApiService _apiService = ApiService();
+    List<UserApiModel> eachposts = await _apiService.fetchUsers();
+    return eachposts;
+  }
+
   @override
   Widget build(BuildContext context) {
     Size s = MediaQuery.of(context).size;
@@ -53,7 +61,11 @@ class _HomeViewState extends State<HomeView> {
                     ],
                   ),
                   const Home_Tab(),
-                  HireCard(s: s, list: list),
+                  HireCard(
+                    s: s,
+                    list: list,
+                    future: submitForm(),
+                  ),
                 ]),
           ),
         ),
